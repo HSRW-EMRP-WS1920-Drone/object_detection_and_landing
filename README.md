@@ -20,7 +20,7 @@ More details: http://pjreddie.com/darknet/yolo/
 1.  [Raspberry Pi setup](#raspberry-pi-setup)
     * [Operating system installation on Raspberry Pi](#operating-system-installation-on-raspberry-pi) 
     * [Remote Access to the Raspberry Pi](#remote-access-to-the-raspberry-pi)
-    * [Camera Calibration - code explanation](#camera-calibration-code-explanation)
+    * [Camera Calibration - code explanation](#blablabla)
 2.  [Drone part](#drone-part)
     * [Drone Calibration](#drone-calibration)
     * [Drone Setup](#drone-setup)
