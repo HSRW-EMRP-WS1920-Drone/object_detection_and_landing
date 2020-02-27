@@ -9,14 +9,14 @@ More details: http://pjreddie.com/darknet/yolo/
 [![AppveyorCI](https://ci.appveyor.com/api/projects/status/594bwb5uoc1fxwiu/branch/master?svg=true)](https://ci.appveyor.com/project/AlexeyAB/darknet/branch/master)
 [![Contributors](https://img.shields.io/github/contributors/AlexeyAB/Darknet.svg)](https://github.com/AlexeyAB/darknet/graphs/contributors)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://github.com/AlexeyAB/darknet/blob/master/LICENSE)  
---->
+
 
 * [Requirements (and how to install dependecies)](#requirements)
 * [Pre-trained models](#pre-trained-models)
 * [Explanations in issues](https://github.com/AlexeyAB/darknet/issues?q=is%3Aopen+is%3Aissue+label%3AExplanations)
 * [Yolo v3 in other frameworks (TensorRT, TensorFlow, PyTorch, OpenVINO, OpenCV-dnn, TVM,...)](#yolo-v3-in-other-frameworks)
 * [Datasets](#datasets)
-
+--->
 1.  [Raspberry Pi setup](#raspberry-pi-setup)
     * [Operating system installation on Raspberry Pi](#operating-system-installation-on-raspberry-pi) 
     * [Remote Access to the Raspberry Pi](#remote-access-to-the-raspberry-pi)
