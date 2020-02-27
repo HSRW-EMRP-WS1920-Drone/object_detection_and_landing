@@ -62,6 +62,14 @@ More details: http://pjreddie.com/darknet/yolo/
 
 ### Landing with aruco marker approach
 #### Aruco marker
+
+An ArUco marker is a black square marker with inner binary representation of identifier. Having black borders, these markers are easy to detect in a frame.
+
+![aruco](images/aruco_markers.jpg)
+
+For each the specific application a dictionary – a set of markers – is defined. Dictionaries have such properties as the dictionary size and the marker size. The size of dictionary is defined by the number of markers it contains, and the marker size is the number of bits it has in the inner part.
+The identification code of marker is not the result of conversion of binary image to a decimal base, but the marker index in the dictionary. The reason is that for high number of bits the results may become unmanagable. 
+
 #### Marker detection
 #### Landing algorithm and code explanation
 #### Testing phase
