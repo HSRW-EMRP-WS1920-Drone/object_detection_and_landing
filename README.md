@@ -18,7 +18,7 @@ More details: http://pjreddie.com/darknet/yolo/
 * [Datasets](#datasets)
 
 1.  [Raspberry Pi setup](#raspberry-pi-setup)
-    * [Operating system installation on Raspberry Pi] 
+    * [Operating system installation on Raspberry Pi] (#raspberry-pi-setup) 
     * [Remote Access to the Raspberry Pi]
     * [Camera Calibration - code explanation]
 2.  [Drone Setup]
@@ -45,7 +45,8 @@ More details: http://pjreddie.com/darknet/yolo/
 7.  [Landing algorithm with Object Detection]
 
 
-### Raspberry Pi setup 
+### Raspberry Pi setup
+#### Operating system installation on Raspberry Pi (#operating-system-installation-on-raspberry-pi)
 
 <!---
 0.  [Improvements in this repository](#improvements-in-this-repository)
