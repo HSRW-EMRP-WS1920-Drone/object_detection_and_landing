@@ -20,7 +20,7 @@ More details: http://pjreddie.com/darknet/yolo/
 1.  [Raspberry Pi setup](#raspberry-pi-setup)
     * [Operating system installation on Raspberry Pi](#operating-system-installation-on-raspberry-pi) 
     * [Remote Access to the Raspberry Pi](#remote-access-to-the-raspberry-pi)
-    * [Camera Calibration - code explanation](#camera-calibration---code-explanation)
+    * [Camera Calibration and code explanation](#camera-calibration-and-code-explanation)
 2.  [Drone part](#drone-part)
     * [Drone Calibration](#drone-calibration)
     * [Drone Setup](#drone-setup)
@@ -41,7 +41,7 @@ More details: http://pjreddie.com/darknet/yolo/
     * [GPU Support](#gpu-suppor)
     * [Training tiny yolo v3 in Google Colab](#training-tiny-yolo-v3-in-google-colab)
     * [NNPack](#nnpack)
-    * Testing the model](#testing-the-model)
+    * [Testing the model](#testing-the-model)
 7.  [Landing algorithm with Object Detection](#landing-algorithm-with-object-detection)
 
 
@@ -60,7 +60,7 @@ More details: http://pjreddie.com/darknet/yolo/
 ### Landing with aruco marker approach
 #### Aruco marker
 #### Marker detection
-#### Landing algorithm - code explanation
+#### Landing algorithm and code explanation
 #### Testing phase
 
 ### Computer Vision
