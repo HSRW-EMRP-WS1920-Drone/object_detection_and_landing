@@ -74,21 +74,21 @@ Parameters:
 
 ![aruco](images/coords_to2.png)
 
-where ![aruco](formulas/f1.png) are board frame coordinates, ![aruco](formulas/f2.png) are camera frame coordinates.
+where ![aruco](formulas/f1.jpg) are board frame coordinates, ![aruco](formulas/f2.jpg) are camera frame coordinates.
 
 3) Drone can navigate to the location of marker with or without altitude reduction. The decision is done according the angle between drones vertical axis and the vector to the marker. This angle indicates drones closeness to the marker and commands to move with landing when it is less than some threshold values. The command  of moving with descend is given if the expression
 
-![aruco](formulas/f3.png) 
+![aruco](formulas/f3.jpg) 
 
-returns true value, where ![aruco](formulas/f4.png) and ![aruco](formulas/f5.png) in radians.
+returns true value, where ![aruco](formulas/f4.jpg) and ![aruco](formulas/f5.jpg) in radians.
 
 4) Calculate latitude and longitude from the marker coordinates. The algorithm was taken from gis portal and is relatively accurate over small distances (10m within 1km). First, north and east attitudes should be calculated for the current yaw of drone. Yaw is a rotation indicator in horizontal space.
 
 ![aruco](images/Yaw_Axis_Corrected.svg.png) 
 
-![aruco](formulas/f6.png) 
+![aruco](formulas/f6.jpg) 
 
-![aruco](formulas/f7.png) 
+![aruco](formulas/f7.jpg) 
 
 Second, latitude and longitude are calculated. Drone’s coordinate is taken from GPS, earth radius is taken approximately 6378137 meters.
 #### Landing algorithm and code explanation
