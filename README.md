@@ -135,6 +135,59 @@ cv::aruco::estimatePoseSingleMarkers(markerCorners, 0.05, cameraMatrix, distCoef
 There rvecs and tvecs are rotation and transformation vehicles respectively.
 
 #### Landing algorithm and code explanation
+
+The algorithm steps:
+
+1) check the aruco class object for new detection. ArucoSingleTracker  is a wrapper class for the access to aruco API.
+
+```c
+marker_found, x_cm, y_cm, z_cm = aruco_tracker.track(loop=False) 
+```
+
+loop = False – do detection once.
+
+Output:
+marker_found – flag, indicating that marker was found, boolean
+x_cm – x coordinate of the marker on the image
+y_cm – y coordinate of the marker on the image
+z_cm – z coordinate of the marker on the image, for the images taken from less than 5 meters, z_cm is taken as an altitude of the drone.
+
+2) If marker_found is True convert x and y coordinates from camera coordinate system to drone coordinate system. The formula is
+
+![aruco](images/coords_to.png)
+![aruco](images/coords_to2.png)
+
+where ![aruco](formulas/f1.jpg) are board frame coordinates, ![aruco](formulas/f2.jpg) are camera frame coordinates.
+
+3) Drone can navigate to the location of marker with or without altitude reduction. The decision is done according the angle between drones vertical axis and the vector to the marker. This angle indicates drones closeness to the marker and commands to move with landing when it is less than some threshold values. The command  of moving with descend is given if the expression
+
+ ![aruco](formulas/f3.jpg)
+ 
+returns true value, where  ![aruco](formulas/f4.jpg) and  ![aruco](formulas/f5.jpg) in radians.
+
+4) Calculate latitude and longitude from the marker coordinates. The algorithm was taken from gis portal and is relatively accurate over small distances (10m within 1km). First, north and east attitudes should be calculated for the current yaw of drone. Yaw is a rotation indicator in horizontal space.
+
+ ![aruco](images/Yaw_Axis_Corrected.svg.png)
+
+ ![aruco](formulas/f6.jpg)
+ 
+  ![aruco](formulas/f7.jpg)
+
+Second, latitude and longitude are calculated. Drone’s coordinate is taken from GPS, earth radius is taken approximately 6378137 meters.
+
+![aruco](formulas/f8.jpg)
+
+![aruco](formulas/f9.jpg)
+
+![aruco](formulas/f10.jpg)
+
+![aruco](formulas/f11.jpg)
+
+5) If the height of drone is less than some threshold altitude, perform vertical landing by changing the mode of vehicle to “LAND” value.
+
+```c
+vehicle.mode = "LAND" 
+```
 #### Testing phase
 
 ### Computer Vision
