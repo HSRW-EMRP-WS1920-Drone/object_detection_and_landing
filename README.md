@@ -17,6 +17,7 @@ More details: http://pjreddie.com/darknet/yolo/
 * [Yolo v3 in other frameworks (TensorRT, TensorFlow, PyTorch, OpenVINO, OpenCV-dnn, TVM,...)](#yolo-v3-in-other-frameworks)
 * [Datasets](#datasets)
 
+<!---
 0.  [Improvements in this repository](#improvements-in-this-repository)
 1.  [How to use](#how-to-use-on-the-command-line)
 2.  How to compile on Linux
@@ -750,3 +751,4 @@ public:
 #endif
 };
 ```
+--->
