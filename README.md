@@ -19,34 +19,65 @@ More details: http://pjreddie.com/darknet/yolo/
 
 1.  [Raspberry Pi setup](#raspberry-pi-setup)
     * [Operating system installation on Raspberry Pi](#operating-system-installation-on-raspberry-pi) 
-    * [Remote Access to the Raspberry Pi]
-    * [Camera Calibration - code explanation]
-2.  [Drone Setup]
-    * [Drone Calibration]
-    * [Drone Setup]
-3.  [Raspberry Pi to Pixhawk connection]
-4.  [Landing with aruco marker approach]
-    * [Aruco marker]
-    * [Marker detection]
-    * [Landing algorithm - code explanation]
-    * [Testing phase]
-5.  [Computer Vision]
-    * [CNN and Transfer learning]
-    * [Object Detection]
-    * [Yolo]
-    * [mAP]
-6.  [Yolo implementation]
-    * [Data Collection]
-    * [Annotation]
-    * [GPU Support]
-    * [Training tiny yolo v3 in Google Colab]
-    * [NNPack]
-    * Testing the model]
-7.  [Landing algorithm with Object Detection]
+    * [Remote Access to the Raspberry Pi](#remote-access-to-the-raspberry-pi)
+    * [Camera Calibration - code explanation](#camera-calibration-code-explanation)
+2.  [Drone part](#drone-part)
+    * [Drone Calibration](#drone-calibration)
+    * [Drone Setup](#drone-setup)
+3.  [Raspberry Pi to Pixhawk connection](#raspberry-pi-to-pixhawk-connection)
+4.  [Landing with aruco marker approach](#landing-with-aruco-marker-approach)
+    * [Aruco marker](#aruco-marker)
+    * [Marker detection](#marker-detection)
+    * [Landing algorithm - code explanation](#landing-algorithm-code-explanation)
+    * [Testing phase](#testing-phase)
+5.  [Computer Vision](#computer-vision)
+    * [CNN and Transfer learning](#cnn-and-transfer-learning)
+    * [Object Detection](#object-detection)
+    * [Yolo](#yolo)
+    * [mAP](#map)
+6.  [Yolo implementation](#yolo-implementation)
+    * [Data Collection](#data-collection)
+    * [Annotation](#annotation)
+    * [GPU Support](#gpu-suppor)
+    * [Training tiny yolo v3 in Google Colab](#training-tiny-yolo-v3-in-google-colab)
+    * [NNPack](#nnpack)
+    * Testing the model](#testing-the-model)
+7.  [Landing algorithm with Object Detection](#landing-algorithm-with-object-detection)
 
 
 ### Raspberry Pi setup
 #### Operating system installation on Raspberry Pi
+#### Remote Access to the Raspberry Pi
+#### Camera Calibration - code explanation
+
+
+### Drone part
+#### Drone Calibration
+#### Drone Setup
+
+### Raspberry Pi to Pixhawk connection
+
+### Landing with aruco marker approach
+#### Aruco marker
+#### Marker detection
+#### Landing algorithm - code explanation
+#### Testing phase
+
+### Computer Vision
+#### CNN and Transfer learning
+#### Object Detection
+#### Yolo
+#### mAP
+
+### Yolo implementation
+#### Data Collection
+#### Annotation
+#### GPU Support
+#### Training tiny yolo v3 in Google Colab
+#### NNPack
+#### Testing the model
+
+### Landing algorithm with Object Detection
 
 <!---
 0.  [Improvements in this repository](#improvements-in-this-repository)
