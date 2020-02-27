@@ -3,21 +3,6 @@
 
 More details: http://pjreddie.com/darknet/yolo/
 
-<!---
-[![CircleCI](https://circleci.com/gh/AlexeyAB/darknet.svg?style=svg)](https://circleci.com/gh/AlexeyAB/darknet)
-[![TravisCI](https://travis-ci.org/AlexeyAB/darknet.svg?branch=master)](https://travis-ci.org/AlexeyAB/darknet)
-[![AppveyorCI](https://ci.appveyor.com/api/projects/status/594bwb5uoc1fxwiu/branch/master?svg=true)](https://ci.appveyor.com/project/AlexeyAB/darknet/branch/master)
-[![Contributors](https://img.shields.io/github/contributors/AlexeyAB/Darknet.svg)](https://github.com/AlexeyAB/darknet/graphs/contributors)
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://github.com/AlexeyAB/darknet/blob/master/LICENSE)  
-
-
-
-* [Requirements (and how to install dependecies)](#requirements)
-* [Pre-trained models](#pre-trained-models)
-* [Explanations in issues](https://github.com/AlexeyAB/darknet/issues?q=is%3Aopen+is%3Aissue+label%3AExplanations)
-* [Yolo v3 in other frameworks (TensorRT, TensorFlow, PyTorch, OpenVINO, OpenCV-dnn, TVM,...)](#yolo-v3-in-other-frameworks)
-* [Datasets](#datasets)
---->
 ### Table of contents
 
 1.  [Raspberry Pi setup](#raspberry-pi-setup)
@@ -66,11 +51,46 @@ More details: http://pjreddie.com/darknet/yolo/
 An ArUco marker is a black square marker with inner binary representation of identifier. Having black borders, these markers are easy to detect in a frame.
 
 ![aruco](images/aruco_markers.jpg)
+> Aruco Marker Samples
 
 For each the specific application a dictionary – a set of markers – is defined. Dictionaries have such properties as the dictionary size and the marker size. The size of dictionary is defined by the number of markers it contains, and the marker size is the number of bits it has in the inner part.
 The identification code of marker is not the result of conversion of binary image to a decimal base, but the marker index in the dictionary. The reason is that for high number of bits the results may become unmanagable. 
 
 #### Marker detection
+OpenCV library provides methods to create and detect aruco markers. The drawmarker() method is defined for generating markers. Dictionary should be chosen beforehand. Example:
+
+    cv::Mat markerImage;
+    cv::Ptr<cv::aruco::Dictionary> dictionary 	cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
+    cv::aruco::drawMarker(dictionary, 23, 200, markerImage, 1);
+    cv::imwrite("marker23.png", markerImage);
+Parameters:
+-     Dictionary object, created from getPredefinedDictionary method
+-     marker id – should be in the range, defined for the selected dictionary
+-     the size of marker in pixels
+-     output image
+-     black border width, expressed by the number of internal bits (optional, default equals 1)
+
+![aruco](images/coords_to2.png)
+
+![aruco](images/coords_to2.png)
+
+where ![aruco](images/f1.png) are board frame coordinates, ![aruco](images/f2.png) are camera frame coordinates.
+
+3) Drone can navigate to the location of marker with or without altitude reduction. The decision is done according the angle between drones vertical axis and the vector to the marker. This angle indicates drones closeness to the marker and commands to move with landing when it is less than some threshold values. The command  of moving with descend is given if the expression
+
+![aruco](images/f3.png) 
+
+returns true value, where ![aruco](images/f4.png) and ![aruco](images/f5.png) in radians.
+
+4) Calculate latitude and longitude from the marker coordinates. The algorithm was taken from gis portal and is relatively accurate over small distances (10m within 1km). First, north and east attitudes should be calculated for the current yaw of drone. Yaw is a rotation indicator in horizontal space.
+
+![aruco](images/Yaw_Axis_Corrected.svg.png) 
+
+![aruco](images/f6.png) 
+
+![aruco](images/f7.png) 
+
+Second, latitude and longitude are calculated. Drone’s coordinate is taken from GPS, earth radius is taken approximately 6378137 meters.
 #### Landing algorithm and code explanation
 #### Testing phase
 
