@@ -32,6 +32,7 @@ rad_2_deg   = 180.0/math.pi
 deg_2_rad   = 1.0/rad_2_deg
 
 land_alt_cm         = 50.0
+hover_alt_cm        =100.0
 angle_descend       = 20*deg_2_rad
 land_speed_cms      = 30.0
 baud_rate = 57600
@@ -158,12 +159,8 @@ while cv2.waitKey(1) < 0:
                     print("Marker N = %5.0f cm   E = %5.0f cm   Yaw = %.0f deg",north, east, vehicle.attitude.yaw*rad_2_deg)
 
                     marker_lat, marker_lon  = get_location_metres(uav_location, north*0.01, east*0.01)
-                    #-- If angle is good, descend
-                    if check_angle_descend(angle_x, angle_y, angle_descend):
-                        print("Low error: descending")
-                        location_marker         = LocationGlobalRelative(marker_lat, marker_lon, uav_location.alt-(land_speed_cms*0.01/freq_send))
-                    else:
-                        location_marker         = LocationGlobalRelative(marker_lat, marker_lon, uav_location.alt)
+                    # angle checking was removed as altitude doesn’t change anymore
+                    location_marker         = LocationGlobalRelative(marker_lat, marker_lon, hover_alt_cm)
 
                     vehicle.simple_goto(location_marker)
                     print("UAV Location    Lat = %.7f  Lon = %.7f",uav_location.lat, uav_location.lon)
