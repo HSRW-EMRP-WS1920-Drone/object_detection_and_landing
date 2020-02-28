@@ -27,9 +27,6 @@ from dronekit import connect, VehicleMode, LocationGlobalRelative, Command, Loca
 from pymavlink import mavutil
 from opencv.lib_aruco_pose import *
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--connect', default = '')
-args = parser.parse_args()
     
 #--------------------------------------------------
 #-------------- FUNCTIONS  
