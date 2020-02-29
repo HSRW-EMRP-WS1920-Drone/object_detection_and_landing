@@ -1,4 +1,4 @@
-from picamera import PiCamera
+﻿from picamera import PiCamera
 from subprocess import Popen, PIPE
 import threading
 from time import sleep
