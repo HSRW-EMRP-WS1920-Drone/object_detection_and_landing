@@ -85,6 +85,7 @@ def check_angle_descend(angle_x, angle_y, angle_desc):
 #-- Connect to the vehicle
 print('Connecting...')
 connection_string = "/dev/ttyAMA0"
+baud_rate = 57600
 vehicle = connect(connection_string,baud=baud_rate, wait_ready=True)  
 
 #--------------------------------------------------
